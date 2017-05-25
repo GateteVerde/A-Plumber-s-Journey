@@ -76,8 +76,6 @@ background_hspeed[1] = -0.2;</code>
     <instance objName="obj_solid" x="304" y="-80" name="inst_5A470861" locked="0" code="" scaleX="1" scaleY="11" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="320" y="80" name="inst_7FCF0D39" locked="0" code="" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_semisolid" x="0" y="160" name="inst_356F3AFC" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_sign" x="112" y="144" name="inst_38698D6C" locked="0" code="message = &quot;BOSS HINT #1: Red loves to charge at you, do not hit him while is covered on his fire aura.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_sign" x="256" y="144" name="inst_8D31FC14" locked="0" code="message = &quot;BOSS HINT #2: Blue loves to walk on ceilings and walls, hit him while is not climbing. Also, avoid hitting him while is under the effect of his ice aura.&quot;;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_checkpoint" x="184" y="80" name="inst_4EE897DC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_semisolid" x="224" y="160" name="inst_B3B0B92B" locked="0" code="" scaleX="10" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_solid" x="208" y="144" name="inst_71E41071" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

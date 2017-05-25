@@ -1304,14 +1304,7 @@
       <object>objects\obj_rockywrench</object>
       <object>objects\obj_chainchomp</object>
     </objects>
-    <objects name="Bosses">
-      <objects name="World 1">
-        <objects name="Goomba Bros.">
-          <object>objects\obj_goombabro_red</object>
-          <object>objects\obj_goombabro_blue</object>
-        </objects>
-      </objects>
-    </objects>
+    <objects name="Bosses"/>
     <objects name="Decoration">
       <objects name="Water">
         <object>objects\obj_watertop</object>
@@ -1404,7 +1397,6 @@
             <object>objects\obj_physicsparent</object>
           </objects>
           <object>objects\obj_powerupparent</object>
-          <object>objects\obj_bossparent</object>
           <object>objects\obj_enemyparent</object>
           <object>objects\obj_deactenemyparent</object>
         </objects>
