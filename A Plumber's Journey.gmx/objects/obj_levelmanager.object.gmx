@@ -59,6 +59,9 @@ switchon = 0;
 //Enable disable music
 musicdisable = 0;
 
+//Goal Stream
+endstream = noone;
+
 //Target object
 if (instance_exists(obj_player)) {
 
@@ -116,6 +119,145 @@ for (i=0; i&lt;8; i++;)
           <argument>
             <kind>0</kind>
             <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Return to the map after the music is done playing.
+
+if (!FMODInstanceIsPlaying(endstream))
+    room_goto(rm_worldmap);
+else
+    alarm[10] = 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Take points off the time, and add to the score
+
+//If there is no time left
+if (global.time == 0) {
+
+    //If the 8-bit sound mode is selected
+    if (obj_persistent.soundmode == 1) {
+    
+        if (audio_is_playing(snd_countdown_8bit))
+            audio_stop_sound(snd_countdown_8bit);
+    }
+    
+    //Otherwise
+    else {
+    
+        if (audio_is_playing(snd_countdown)) {
+        
+            //Stop count down sound
+            audio_stop_sound(snd_countdown);
+            
+            //Play count end sound
+            audio_play_sound(snd_countdown_end, 0, false);
+        }
+    }
+    
+    //Go to world map
+    alarm[10] = 120;
+}
+
+//Otherwise
+else {
+
+    if (global.time &gt; 0) {
+    
+        //Add 50 to the score
+        score += 50;
+        
+        //Subtract 1 second from the timer
+        global.time--;
+    }
+
+    //Continue counting down
+    alarm[9] = 1;   
+    
+    //Play the count sound
+    if (obj_persistent.soundmode == 0) 
+        audio_play_sound(snd_countdown, 0, false);
+    else
+        audio_play_sound(snd_countdown_8bit, 0, false);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="8">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Play 'Level Clear' music
+
+//Play the flagpole music
+endstream = FMODSoundPlay(global.track_flagpole, 0);
+
+//Clear the level
+global.clear = 1;
+
+//Forget check points
+global.checkpoint = noone;
+
+//Keep the collected powerstar forever
+if (global.powerstar[global.check] &gt; 0)
+    global.powerstar[global.check] = 3;
+
+//Countdown timer
+alarm[9] = 120;
+</string>
           </argument>
         </arguments>
       </action>

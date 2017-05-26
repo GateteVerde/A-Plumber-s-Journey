@@ -87,7 +87,7 @@ else {
                 case ("1"): room_goto(rm_world1_1a); break;
                 case ("2"): room_goto(rm_world1_2a); break;
                 case ("3"): room_goto(rm_world1_3a); break;
-                case ("4"): room_goto(rm_world1_4a); break;
+                case ("4"): room_goto(rm_world1_4d); break;
                 case ("5"): break;
                 case ("6"): break;
                 case ("7"): break;

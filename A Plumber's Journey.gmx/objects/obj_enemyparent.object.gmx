@@ -223,24 +223,32 @@ with (instance_create(round(bbox_left+bbox_right)/2-8,round(y),obj_points))
             <string>///Kill it with fire
 
 //If the enemy is immune to fireballs or invincible, destroy the fireball.
-if (hardness &gt; 0) {
+if ((hardness &gt; 0) &amp;&amp; (hardness &lt; 100)) {
 
     with (other) event_user(0);
     exit;
 }
 
-//Play 'Kick' sound
-scr_playsound(snd_kick, snd_kick_8bit, 0, false);
+//Otherwise, if the projectiles does not pass through
+else {
 
-//Kill enemy
-event_user(0);
+    //If the enemy can ignore projectiles
+    if (hardness == 100)
+    exit;
 
-//Kill fireball
-with (other) event_user(0);
+    //Play 'Kick' sound
+    scr_playsound(snd_kick, snd_kick_8bit, 0, false);
     
-//Give points
-with (instance_create(round(bbox_left+bbox_right)/2-8,round(y),obj_points))
-    event_user(other.scoregrade);
+    //Kill enemy
+    event_user(0);
+    
+    //Kill fireball
+    with (other) event_user(0);
+        
+    //Give points
+    with (instance_create(round(bbox_left+bbox_right)/2-8,round(y),obj_points))
+        event_user(other.scoregrade);
+}
 </string>
           </argument>
         </arguments>
