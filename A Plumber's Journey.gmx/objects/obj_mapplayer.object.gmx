@@ -344,7 +344,7 @@ if (visible) {
 //Lower volume when entering a stage
 if (vspeed &gt; 0) {
 
-    volume -= 0.05;
+    volume -= 0.025;
     if (vspeed &gt; 0)
         FMODInstanceSetVolume(stream, volume);
 }

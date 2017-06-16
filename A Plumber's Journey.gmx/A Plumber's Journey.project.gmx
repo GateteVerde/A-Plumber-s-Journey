@@ -1538,28 +1538,6 @@
     </rooms>
     <rooms name="Levels">
       <room>rooms\rm_enginetest</room>
-      <rooms name="World 1">
-        <rooms name="World 1-1">
-          <room>rooms\rm_world1_1a</room>
-          <room>rooms\rm_world1_1b</room>
-        </rooms>
-        <rooms name="World 1-2">
-          <room>rooms\rm_world1_2a</room>
-          <room>rooms\rm_world1_2b</room>
-          <room>rooms\rm_world1_2c</room>
-        </rooms>
-        <rooms name="World 1-3">
-          <room>rooms\rm_world1_3a</room>
-          <room>rooms\rm_world1_3b</room>
-        </rooms>
-        <rooms name="World 1-4">
-          <room>rooms\rm_world1_4a</room>
-          <room>rooms\rm_world1_4b</room>
-          <room>rooms\rm_world1_4c</room>
-          <room>rooms\rm_world1_4d</room>
-          <room>rooms\rm_world1_4Boss</room>
-        </rooms>
-      </rooms>
     </rooms>
     <rooms name="Special">
       <room>rooms\rm_retry</room>

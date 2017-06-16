@@ -170,6 +170,12 @@ else
             <kind>1</kind>
             <string>///Take points off the time, and add to the score
 
+if (FMODInstanceIsPlaying(endstream)) {
+
+    alarm[9] = 1;
+    exit;
+}
+
 //If there is no time left
 if (global.time == 0) {
 
