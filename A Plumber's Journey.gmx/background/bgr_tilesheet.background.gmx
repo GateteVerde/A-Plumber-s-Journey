@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>720</width>
-  <height>592</height>
+  <width>896</width>
+  <height>720</height>
   <data>images\bgr_tilesheet.png</data>
 </background>
