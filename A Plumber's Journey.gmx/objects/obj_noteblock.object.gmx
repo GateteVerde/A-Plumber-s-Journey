@@ -132,8 +132,14 @@ if (instance_exists(obj_player)) {
         obj_player.hspeed = 0;
                 
         //Snap above the block
-        if (vspeed &lt;&gt; 0)
+        if (vspeed &lt;&gt; 0) {
+        
             obj_player.y = y-16;
+            if (obj_player.x &lt; x+8)
+                obj_player.x++;
+            else
+                obj_player.x--;
+        }
     }
 }
             
@@ -165,51 +171,6 @@ else {
 //Make the solid move along with the block
 if (top &gt; 0)
     mysolid.y = y;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Note block logic
-
-//If this block has not been hit before.
-if ((ready == 0) &amp;&amp; (top == 0)) {
-
-    //If the player does exist and is above this block.
-    if (instance_exists(obj_player))
-    &amp;&amp; (obj_player.y &lt; y-11)
-    &amp;&amp; (obj_player.state &lt; 2)
-    &amp;&amp; (obj_player.vspeed &gt;= 0)
-    &amp;&amp; (collision_rectangle(bbox_left,bbox_top-1,bbox_right,bbox_top-1,obj_player,0,0)) {
-            
-        //Hit from top
-        top = 1;
-        
-        //Block hit
-        ready = 1;
-        
-        //Move down
-        vspeed = 1;
-        alarm[0] = 8;
-    }
-}
 </string>
           </argument>
         </arguments>

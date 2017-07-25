@@ -93,7 +93,7 @@ if (instance_exists(obj_player)) {
     if (keyboard_check_pressed(vk_up))
     &amp;&amp; (obj_player.state &lt; 2)
     &amp;&amp; (collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_player,0,1))
-        message_get(message, 160, 32, bbox_left-80, bbox_top-56, id);
+        message_get(message, 176, 32, bbox_left-88, bbox_top-56, id);
 }
 </string>
           </argument>

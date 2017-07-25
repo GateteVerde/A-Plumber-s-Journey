@@ -28,7 +28,7 @@
             <string>///A powerstar, collect these to unlock levels on the map screen
 
 //Animate
-image_speed = 0.15;
+image_speed = 0.5;
 
 //Collected?
 ready = 0;
@@ -41,7 +41,7 @@ alarm[0] = 7;
 
 //Check if this coin has been collected on a previous run.
 if (global.powerstar[global.check] &gt; 0)
-    instance_destroy();
+    ready = 2;
 </string>
           </argument>
         </arguments>
@@ -66,8 +66,9 @@ if (global.powerstar[global.check] &gt; 0)
             <kind>1</kind>
             <string>///Create a trail
 
-instance_create(x-4+random(round(24)),y-4+random(round(24)),obj_sparkle_trail);
 alarm[0] = 4;
+if (ready != 2)
+    instance_create(x-4+random(round(24)),y-4+random(round(24)),obj_sparkle_trail);
 </string>
           </argument>
         </arguments>
@@ -92,28 +93,32 @@ alarm[0] = 4;
             <kind>1</kind>
             <string>///Medal logic
 
-if (ready) {
+if (ready &gt; 0) {
 
     if ((vspeed &gt; 0) &amp;&amp; (y &gt; ystart)) {
         
-        //Burst in a lot of sparkles
-        var a = 0;
-        var b = 22.5;
-        repeat (8) {
+        //If the coin was not collected before...
+        if (ready == 1) {
         
-            with (instance_create(x+8,y+8,obj_sparkle_trail)) {
+            //Burst in a lot of sparkles
+            var a = 0;
+            var b = 22.5;
+            repeat (8) {
             
-                //Motion
-                motion_set(a,2);
+                with (instance_create(x+8,y+8,obj_sparkle_trail)) {
+                
+                    //Motion
+                    motion_set(a,2);
+                }
+                a += 45;
+                
+                with (instance_create(x+8,y+8,obj_sparkle_trail)) {
+                
+                    //Motion
+                    motion_set(b,1);
+                }
+                b += 45;
             }
-            a += 45;
-            
-            with (instance_create(x+8,y+8,obj_sparkle_trail)) {
-            
-                //Motion
-                motion_set(b,1);
-            }
-            b += 45;
         }
         
         //Destroy it
@@ -144,28 +149,33 @@ if (ready) {
             <kind>1</kind>
             <string>///Collect the medal
 
-//If the star has not been collected yet.
-if ((!ready) &amp;&amp; (other.ready)) {
-    
+//Check if the medal was not collected
+if ((image_speed != 2) &amp;&amp; (other.ready &gt; 0)) {
+
     //Play 'Medal' sound
-    scr_playsound(snd_medal, snd_coin_8bit, 0, false);
+    scr_playsound(snd_medal, snd_medal_8bit, 0, false);
+    
+    //Check if collected
+    if (global.powerstar[global.check] == 0) {
+    
+        ready = 1;
+        global.powerstar[global.check] = 1;
+    }
+    else {
+    
+        ready = 2;
+    }
     
     //Set animation speed
-    image_speed = 0.5;
+    image_speed = 2;
     
     //Set vertical movement
-    gravity = 0.2
-    vspeed = -4
+    vspeed = -4;
+    gravity = 0.2;
     
-    //Coin get
-    ready = 1;    
-    
-    //Collect it
-    global.powerstar[global.check] = 1;
-    
-    //Get 4000 points
+    //Get 1000 points
     with (instance_create(x,y,obj_points))
-        event_user(7);
+        event_user(5);
 }
 </string>
           </argument>
@@ -191,28 +201,33 @@ if ((!ready) &amp;&amp; (other.ready)) {
             <kind>1</kind>
             <string>///Collect the medal
 
-//If the star has not been collected yet.
-if (!ready) {
-    
+//Check if the medal was not collected
+if (image_speed != 2) {
+
     //Play 'Medal' sound
-    scr_playsound(snd_medal, snd_coin_8bit, 0, false);
+    scr_playsound(snd_medal, snd_medal_8bit, 0, false);
+    
+    //Check if collected
+    if (global.powerstar[global.check] == 0) {
+    
+        ready = 1;
+        global.powerstar[global.check] = 1;
+    }
+    else {
+    
+        ready = 2;
+    }
     
     //Set animation speed
-    image_speed = 0.5;
+    image_speed = 2;
     
     //Set vertical movement
-    gravity = 0.2
-    vspeed = -4
+    vspeed = -4;
+    gravity = 0.2;
     
-    //Coin get
-    ready = 1;    
-    
-    //Collect it
-    global.powerstar[global.check] = 1;
-    
-    //Get 4000 points
+    //Get 1000 points
     with (instance_create(x,y,obj_points))
-        event_user(7);
+        event_user(5);
 }
 </string>
           </argument>
@@ -238,7 +253,10 @@ if (!ready) {
             <kind>1</kind>
             <string>///Draw the power star
 
-draw_sprite(sprite_index,-1,round(x),round(y));
+if (ready != 2)
+    draw_sprite(sprite_index,-1,round(x),round(y));
+else
+    draw_sprite_ext(spr_powerstar_get,-1,round(x),round(y),1,1,0,c_white,0.5);
 </string>
           </argument>
         </arguments>

@@ -9,7 +9,7 @@
 */
 
 followers = global.key+1;
-closeness = 16;
+closeness = 8;
 amount_previous = 2480;
 
 //Set fireballs start position

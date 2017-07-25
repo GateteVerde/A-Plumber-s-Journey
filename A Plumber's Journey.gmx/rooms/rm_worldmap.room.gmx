@@ -82,8 +82,6 @@ background_hspeed[1] = -0.2;</code>
     <instance objName="obj_mapplayer" x="192" y="156" name="inst_D3F17EA3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
-    <tile bgName="bgr_tilesheet" x="1464" y="-8" w="144" h="176" xo="0" yo="336" id="10004145" name="inst_17FB3C1B" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bgr_tilesheet" x="728" y="88" w="80" h="80" xo="32" yo="336" id="10004146" name="inst_CA1E86B1" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgr_tilesheet" x="744" y="152" w="16" h="16" xo="416" yo="96" id="10004147" name="inst_CB3BC649" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgr_tilesheet" x="776" y="152" w="16" h="16" xo="384" yo="96" id="10004148" name="inst_C038BA4D" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgr_tilesheet" x="728" y="152" w="16" h="16" xo="400" yo="96" id="10004149" name="inst_B99B2C03" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -100,6 +98,8 @@ background_hspeed[1] = -0.2;</code>
     <tile bgName="bgr_tilesheet" x="1448" y="152" w="16" h="16" xo="400" yo="96" id="10004160" name="inst_8304677C" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgr_tilesheet" x="1432" y="152" w="16" h="16" xo="384" yo="96" id="10004161" name="inst_72162A1E" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bgr_tilesheet" x="1624" y="152" w="16" h="16" xo="416" yo="96" id="10004162" name="inst_E8B02274" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgr_tilesheet" x="728" y="88" w="80" h="80" xo="32" yo="544" id="10009105" name="inst_0F2EFBDB" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bgr_tilesheet" x="1464" y="-8" w="144" h="176" xo="0" yo="544" id="10009106" name="inst_D381B2E2" depth="14" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>

@@ -1390,7 +1390,8 @@ if (vspeed &gt;= 0) { //If the player is moving down.
     
     //Left conveyor belt collision
     lconv = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_conveyor_left,0,0);
-    if ((lconv) &amp;&amp; (lconv.image_speed != 0)) {
+    if (lconv) 
+    &amp;&amp; (lconv.image_speed != 0) {
     
         if (!collision_rectangle(bbox_left-1,bbox_top+4,bbox_left,bbox_bottom-1,obj_solid,1,0))
             x--;
@@ -1398,10 +1399,32 @@ if (vspeed &gt;= 0) { //If the player is moving down.
     
     //Right conveyor belt collision
     rconv = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_conveyor_right,0,0);
-    if ((rconv) &amp;&amp; (rconv.image_speed != 0)) {
+    if (rconv) 
+    &amp;&amp; (rconv.image_speed != 0) {
     
         if (!collision_rectangle(bbox_right,bbox_top+4,bbox_right+1,bbox_bottom-1,obj_solid,1,0))
             x++;
+    }
+    
+    //Note block collision
+    note = collision_rectangle(bbox_left,bbox_bottom,bbox_right,bbox_bottom+1,obj_noteblock,0,0);
+    if (note)
+    &amp;&amp; (note.top == 0)
+    &amp;&amp; (note.ready == 0) {
+                
+        //With the note block
+        with (note) {
+            
+            //Hit from top
+            top = 1;
+            
+            //Block hit
+            ready = 1;
+            
+            //Move down
+            vspeed = 1;
+            alarm[0] = 8;
+        }
     }
 }
 

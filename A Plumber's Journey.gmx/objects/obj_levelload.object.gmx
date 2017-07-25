@@ -84,7 +84,7 @@ else {
             //Check selected level of world 1
             switch (global.level) {
             
-                case ("1"): room_goto(rm_enginetest); break;
+                case ("1"): room_goto(rm_w1_1a); break;
                 case ("2"): break;
                 case ("3"): break;
                 case ("4"): break;

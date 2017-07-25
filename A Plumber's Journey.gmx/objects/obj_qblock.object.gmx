@@ -113,9 +113,9 @@ event_inherited();
 vspeed = 0;
 y = ystart;
 
-//Sprout out an item
+//Create a item
 if (sprout != cs_coin)
-event_user(1);
+    event_user(1);
 
 //Turn into a used block
 instance_create(xstart,ystart,obj_qblock_empty);
@@ -146,7 +146,7 @@ exit;
             <string>///Sprout out an item
 
 //Create sprout object with...
-with (instance_create(x,y,obj_powerupsprout)) {
+with (instance_create(xstart,ystart,obj_powerupsprout)) {
 
     //Check what item does the block have
     switch (other.sprout) {

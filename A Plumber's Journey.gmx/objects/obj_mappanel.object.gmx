@@ -122,6 +122,8 @@ with (obj_mapplayer) ready = 1;
 path = collision_point(bbox_right+1,y+8,obj_mappath,1,0);
 if (path)
     with (path) alarm[0] = 1;
+else
+    exit;
 </string>
           </argument>
         </arguments>

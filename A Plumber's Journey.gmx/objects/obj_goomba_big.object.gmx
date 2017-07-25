@@ -208,6 +208,9 @@ else
             <kind>1</kind>
             <string>///Turn into 2 goombas
 
+//Play 'Split' sound
+audio_play_sound(snd_split, 0, false);
+
 //Create both goombas
 with (instance_create(x-12,y,obj_goomba)) {
 

@@ -402,6 +402,7 @@
       <sound>sound\snd_jump_super_8bit</sound>
       <sound>sound\snd_key_8bit</sound>
       <sound>sound\snd_kick_8bit</sound>
+      <sound>sound\snd_medal_8bit</sound>
       <sound>sound\snd_move_8bit</sound>
       <sound>sound\snd_openpath_8bit</sound>
       <sound>sound\snd_pause_8bit</sound>
@@ -411,8 +412,10 @@
       <sound>sound\snd_swim_8bit</sound>
       <sound>sound\snd_trampoline_8bit</sound>
       <sound>sound\snd_vine_8bit</sound>
+      <sound>sound\snd_whistle_8bit</sound>
     </sounds>
     <sound>sound\snd_rain</sound>
+    <sound>sound\snd_split</sound>
     <sound>sound\snd_thunder</sound>
   </sounds>
   <sprites name="sprites">
@@ -678,6 +681,10 @@
     </sprites>
     <sprites name="Items">
       <sprites name="Powerups">
+        <sprites name="Mounts">
+          <sprite>sprites\spr_shoe</sprite>
+          <sprite>sprites\spr_shoe_fly</sprite>
+        </sprites>
         <sprite>sprites\spr_mushroom</sprite>
         <sprite>sprites\spr_fireflower</sprite>
         <sprite>sprites\spr_star</sprite>
@@ -714,6 +721,7 @@
       <sprites name="Currency">
         <sprites name="Special">
           <sprite>sprites\spr_powerstar</sprite>
+          <sprite>sprites\spr_powerstar_get</sprite>
           <sprite>sprites\spr_powerstar_noget</sprite>
         </sprites>
         <sprite>sprites\spr_coin</sprite>
@@ -793,6 +801,7 @@
         <sprite>sprites\spr_sparkle_trail</sprite>
         <sprite>sprites\spr_sparkle_trail_red</sprite>
         <sprite>sprites\spr_sparkle_trail_green</sprite>
+        <sprite>sprites\spr_sparkle_trail_white</sprite>
         <sprite>sprites\spr_spinthump</sprite>
       </sprites>
       <sprites name="HUD">
@@ -873,6 +882,7 @@
     <backgrounds name="Level Backgrounds">
       <backgrounds name="Gradients">
         <background>background\bgr_sky</background>
+        <background>background\bgr_sky_dark</background>
         <background>background\bgr_sky_pale</background>
         <background>background\bgr_sky_cherry</background>
         <background>background\bgr_sky_afternoon</background>
@@ -884,6 +894,13 @@
         <background>background\bgr_castle_b</background>
         <background>background\bgr_castle_c</background>
         <background>background\bgr_castle_d</background>
+      </backgrounds>
+      <backgrounds name="Bonus">
+        <background>background\bgr_bonus</background>
+        <background>background\bgr_bonus_red</background>
+        <background>background\bgr_bonus_green</background>
+        <background>background\bgr_bonus_yellow</background>
+        <background>background\bgr_bonus_blue</background>
       </backgrounds>
       <background>background\bgr_clouds</background>
       <background>background\bgr_clouds_cherry</background>
@@ -1499,6 +1516,9 @@
               <object>objects\obj_1up</object>
               <object>objects\obj_poison</object>
             </objects>
+            <objects name="Mounts">
+              <object>objects\obj_shoe</object>
+            </objects>
             <object>objects\obj_powerupsprout</object>
             <object>objects\obj_fireball</object>
             <object>objects\obj_invincibility</object>
@@ -1540,7 +1560,7 @@
       <room>rooms\rm_enginetest</room>
       <rooms name="World 1">
         <rooms name="Level 1">
-          <room>rooms\rm_lvl_11a</room>
+          <room>rooms\rm_w1_1a</room>
         </rooms>
       </rooms>
     </rooms>

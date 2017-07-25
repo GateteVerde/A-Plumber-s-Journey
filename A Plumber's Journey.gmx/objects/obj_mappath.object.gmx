@@ -99,8 +99,21 @@ if (image_alpha &gt;= 0.98) {
         }
     }
 }
-else
-    alarm[1] = 1;
+else {
+
+    alarm[1] = 2;
+    with (instance_create(random_range(x,x+sprite_width),y+4,obj_sparkle_trail)) {
+                   
+        //Motion
+        motion_set(90,random_range(0.5,1.5));
+        
+        //Gravity
+        gravity = 0.05;
+        
+        //Sprite
+        sprite_index = spr_sparkle_trail_white;      
+    }
+}
 </string>
           </argument>
         </arguments>

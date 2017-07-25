@@ -93,7 +93,7 @@ flagsprite = spr_checkpoint_flag;
 if (flagsprite == spr_checkpoint_flag) {
 
     //Play 'Whistle' sound
-    scr_playsound(snd_whistle, snd_coin_8bit, 0, false);
+    scr_playsound(snd_whistle, snd_whistle_8bit, 0, false);
 
     //Deactivate checkpoints
     with (obj_checkpoint) flagsprite = spr_checkpoint_flag;
